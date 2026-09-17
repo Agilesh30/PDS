@@ -34,14 +34,7 @@ int main()
         for (int j=0;j<C;j++)
         {
             sum+=cpu[i][j];
-        }
         printf("Server  %d:%d\n",i+1,sum);
-        if (old_sum<sum)
-        {
-        max=i;
-        old_sum=sum;
-        }
-        sum=0;
+   
     }
-    printf("The maximium consumption is in server %d",max+1);
 }
