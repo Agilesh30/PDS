@@ -1,30 +1,27 @@
 #include <stdio.h>
+int findEmployee(int a[],int n,int key)
+{
+    int pos=-1;
+    for (int i=0;i<n;i++)
+    {
+        if (a[i]==key){
+            pos=i+1;
+            return pos;
+        }
+    }
+    return pos;
+}
 int main()
 {
-    int row,col;
-    printf("Enter Row and Col");
-    scanf("%d %d",&row,&col);
-    int arr[row][col];
-    int max=0,server,time;
-    for (int i=0;i<row;i++)
-        {
-            printf ("Enter value for Row %d:",i+1);
-            for (int j=0;j<col;j++)
-                {
-                    scanf("%d",&arr[i][j]);
-                }
-        }
-    for (int i=0;i<row;i++)
-        {
-            for (int j=0;j<col;j++)
-                {
-                    if (arr[i][j]>max)
-                    {
-                        max=arr[i][j];
-                        server=i+1;
-                        time=j+1;
-                    }
-                }
-        }  
-        printf("Highest CPU usage :%d \nServer Number :%d \n Time interval:%d",max,server,time);
+ int n,key;
+ printf("Enter size of the array:");
+ scanf("%d",&n);
+ int arr[n];
+ for (int i=0;i<n;i++)
+ {
+     scanf("%d",&arr[i]);
+ }
+ printf("\nEnter Key:");
+ scanf("%d",&key);
+ printf("The value %d is found in%d",key,findEmployee(arr,n,key));
 }
