@@ -1,32 +1,27 @@
+/*. A data center records CPU loads of three servers. Find the server having the highest CPU  load.
+Function Prototype
+int findHighest(int a, int b, int c);
+Sample Input
+72 91 85
+Sample Output
+Highest Server Load: 91
+*/
+
+int findHighest(int a,int b,int c)
+{
+    int max=a;
+    if (b>max)
+        max=b;
+    else if (c>max)
+        max=c;
+    return max;
+}
+
 #include <stdio.h>
 int main()
 {
-    int R,C,val,sum=0,max,old_sum=0;
-    scanf("%d %d",&R,&C);
-
-    int cpu[R][C];
-    for (int i=0;i<R;i++)
-    {
-        printf("Enter consumption for server %d:",i+1);
-        for (int j=0;j<C;j++)
-        {
-            scanf("%d",&cpu[i][j]);
-        }
-
-    }
-      for (int i=0;i<R;i++)
-    {
-        for (int j=0;j<C;j++)
-        {
-            sum+=cpu[i][j];
-        }
-    //    printf("Server  %d:%d\n",i+1,sum);
-        if (old_sum<sum)
-        {
-        max=i;
-        old_sum=sum;
-        }
-        sum=0;
-    }
-    printf("The maximium consumption is in server %d",max+1);
+    int a,b,c;
+    printf("Enter three numbers:");
+    scanf("%d %d %d",&a,&b,&c);
+    printf("Highest Server Load : %d",findHighest(a,b,c));
 }
